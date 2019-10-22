@@ -1,0 +1,16 @@
+﻿# Rime dictionary
+# encoding: utf-8
+#
+# jingwaa_fanwan - 1856年《英華分韵撮要》
+#
+# Author - LeiMaau <leimaau@qq.com>
+#
+#
+
+---
+name: jingwaa_fanwan
+version: "2019.10.23"
+sort: by_weight	# original
+use_preset_vocabulary: true
+...
+

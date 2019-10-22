@@ -1,0 +1,16 @@
+﻿# Rime dictionary
+# encoding: utf-8
+#
+# gongwu_fanwan - 1838年《江湖尺牘分韻撮要合集》
+#
+# Author - LeiMaau <leimaau@qq.com>
+#
+#
+
+---
+name: gongwu_fanwan
+version: "2019.10.23"
+sort: by_weight	# original
+use_preset_vocabulary: true
+...
+
