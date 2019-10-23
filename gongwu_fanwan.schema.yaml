@@ -82,7 +82,7 @@ speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   algebra:
-    - derive/([123456])//         # 忽略声调
+    - derive/([12345678°])//      # 忽略声调
     - derive/^([aeiou])/q$1/      # 增加 q 表示喉塞
     - xform/1/q/
     - xform/7/q/                  # 陰入
@@ -90,12 +90,15 @@ speller:
     - xform/2/v/
     - xform/5/vv/
     - xform/3/x/
-    - xform/7/x/                  # 陰入
+    - xform/q°/x/                 # 陰入
     - xform/6/xx/
     - xform/8/xx/                 # 陽入
+    - derive/^(z|c|s)z$/$1y/      # 兼容 (zcs)z -> (zcs)y 吳語式方案
+    - derive/^(z|c|s)z$/$1ii/     # 兼容 (zcs)z -> (zcs)ii 客家話方案
     - derive/^nj/j/               # 模糊 nj -> j
     - derive/^([zcs])h/$1/        # 模糊 (zcs)h -> (zcs)
     - derive/^([zcs])eo([int])$/$1u$2/      # 模糊 (zcs)eo(int) -> (zcs)u(int)
+    - derive/^([gk])w(u|yu|yun|yut|ui|un|ut)/$1$2/        # 模糊 ([gk])w(u|yu|yun|yut|ui|un|ut) -> ([gk])(yu|yun|yut|ui|un|ut)
     - derive/aa/r/                # 容錯 aa -> r
     - derive/aa$/a/               # 容錯 aa -> a
     - derive/oe(ng|k)$/eo$1/      # 容錯 oe(ng|k) -> eo(ng|k)
@@ -113,44 +116,46 @@ translator:
   prism: gongwu_fanwan
   spelling_hints: 5  # 標註拼音的字數，建議橫排顯示時設置爲1
   preedit_format:    # 需要顯示IPA時這段要被替換掉
-    - xform/([aeioumngptk])qq/$1⁴/
-    - xform/([aeioumng])q/$1¹/
-    - xform/([aeioumngptk])vv/$1⁵/
-    - xform/([aeioumngptk])v/$1²/
-    - xform/([aeioumngptk])xx/$1⁶/
-    - xform/([aeioumng])x/$1³/
+    - xform/([zaeioumngptk])qq/$1⁴/
+    - xform/([zaeioumng])q/$1¹/
+    - xform/([zaeioumngptk])vv/$1⁵/
+    - xform/([zaeioumngptk])v/$1²/
+    - xform/([zaeioumng])xx/$1⁶/
+    - xform/([zaeioumng])x/$1³/
     - xform/([ptk])q/$1⁷/
-    - xform/([ptk])x/$1⁷/
+    - xform/([ptk])xx/$1⁸/
+    - xform/([ptk])x/$1⁷°/
 #  preedit_format:   # 需要顯示IPA時preedit_format替換成這段
 #    - xform/(^|[ '])(m|ng)+$/$1$2̩$3/	唔m̩ 五ŋ̩
 #    - xform/([ptk])xx/$1˨/	熱jiːt̚˨
 #    - xform/([ptk])x/$1˧/	咽jiːt̚˧
 #    - xform/([ptk])q/$1˥/	一jɐt̚
-#    - xform/qq/˨˩/	而jiː˨˩
-#    - xform/q/˥˥/	倚jiː˥˥
-#    - xform/vv/˩˧/	以jiː˩˧
-#    - xform/v/˧˥/	倚jiː˧˥
-#    - xform/xx/˨˨/	二jiː˨˨
-#    - xform/x/˧˧/	以jiː˧˧
+#    - xform/qq/˨˩/
+#    - xform/q/˥˥/
+#    - xform/vv/˩˧/
+#    - xform/v/˧˥/
+#    - xform/xx/˨˨/
+#    - xform/x/˧˧/
 #    - xform/([PTK])$/$1]$2/	入jɐp̚
 #    - xform/(^|[ '])([jy])u(ng)/$1jʊŋ/	用jʊŋ
-#    - xform/(^|[ '])(jy|[jy])u([t])/$1jYː$3]/	月jyːt̚
+#    - xform/(^|[ '])(jy|[jy])u([t])/$1jYː$3]/	月ȵyːt̚
 #    - xform/([dtlgkhzcsj])yu([t])/$1Yː$2]/	奪tyːt̚
-#    - xform/(^|[ '])([jy])u([k])/$1jʊ$3]/	玉jʊk̚
-#    - xform/(^|[ '])(jy)u/$1jYː/	元jyːn
+#    - xform/(^|[ '])([jy])u([k])/$1jʊ$3]/	玉ȵʊk̚
+#    - xform/(^|[ '])(jy)u/$1jYː/	元ȵyːn
 #    - xform/yu/Yː/	嫩nyːn
 #    - xform/y([aeior])/j$1/	一yat/jɐt̚/
 #    - xform/(aa|r)([iu])/Aː\U$2/	嗎maː
 #    - xform/a([iu])/ɐ\U$1/	米mɐi
-#    - xform/(aa|r)([ptk])/Aː\U$2]/	握aːk̚
-#    - xform/a([ptk])/ɐ\U$1]/	呃ɐk̚
+#    - xform/(aa|r)([ptk])/Aː\U$2]/	鈪aːk̚
+#    - xform/a([ptk])/ɐ\U$1]/	厄ɐk̚
 #    - xform/(aa|r)/Aː/	嗎maː
 #    - xform/b/P/	吧paː
-#    - xform/c/T͡sH/	差tsʰaː
+#    - xform/ch/T͡ʃH/	差tʃʰaː
+#    - xform/c/T͡sH/	倉tsʰɔːŋ
 #    - xform/d/T/	打taː
-#    - xform/eu/ɛːU/	掉tɛːu
-#    - xform/eoi/ʊi/	# 水ʃʊi/ʃɵy(ɵY)
-#    - xform/oei/ʊi/	容錯  # ʊi/ɵy
+#    - xform/eu/ɛːU/
+#    - xform/eoi/ʊI/	# 水ʃʊi/ʃɵy(ɵY)
+#    - xform/oei/ʊI/	容錯  # ʊi/ɵy
 #    - xform/oe([ptk])/œː$1]/	約jœːk̚
 #    - xform/oe(ng)/œː$1/	容錯
 #    - xform/oe([t])/ʊ$1]/	容錯  # ʊt̚/ɵt̚
@@ -161,7 +166,7 @@ translator:
 #    - xform/eo([k])/œː$1]/	容錯
 #    - xform/eo([t])/ʊ$1]/	# 率ʃʊt̚/ʃɵt̚
 #    - xform/eon/ʊn/	# 信sʊn/sɵn
-#    - xform/ou/OU/	無mou
+#    - xform/ou/OU/
 #    - xform/u([k])/ʊ$1]/	六lʊk̚
 #    - xform/ui/UːI/	回wuːi
 #    - xform/iu/IːU/	小siːu
@@ -170,7 +175,7 @@ translator:
 #    - xform/i([pt])/Iː$1]/	結kiːt̚
 #    - xform/eo/ʊ/	# 雖sʊi/sɵy
 #    - xform/a/ɐ/	粒nɐp̚
-#    - xform/ei/EI/	欸ei
+#    - xform/ei/EI/
 #    - xform/i/Iː/	是siː
 #    - xform/e([ptk])/ɛː$1]/	壢lɛːk̚
 #    - xform/e/ɛː/	寫sɛː
@@ -180,20 +185,28 @@ translator:
 #    - xform/o/ɔː/	錯tsʰɔː
 #    - xform/u/Uː/	故kuː
 #    - xform/ng/N/	我ŋɔː
-#    - xform/n/n/	你nei
+#    - xform/n/n/	你ni
 #    - xform/kw/KWH/	群kʷʰɐn
 #    - xform/gw/KW/	均kʷɐn
 #    - xform/g/K/	急kɐp̚
 #    - xform/(^|[ '])([ptk])/$1$2H/	噴pʰɐn
 #    - xform/w/w/	雲wɐn
 #    - xform/j/j/	人jɐn
-#    - xform/m/m/	美mei
-#    - xform/l/l/	裏lei
-#    - xform/s/s/	死sei
-#    - xform/z/T͡s/	這t͡sɛː
-#    - xform/T͡ʃz/T͡sɿ/
-#    - xform/T͡ʃHz/T͡sHɿ/
-#    - xform/ʃz/sɿ/
+#    - xform/m/m/	美mi
+#    - xform/l/l/	里li
+#    - xform/sh/ʃ/	是ʃi
+#    - xform/s/s/	死sɿ
+#    - xform/zh/T͡ʃ/	這t͡ʃɛː
+#    - xform/z/T͡s/	借t͡sɛː
+#    - xform/T͡sy/T͡sɿ/
+#    - xform/T͡sHy/T͡sHɿ/
+#    - xform/sy/sɿ/
+#    - xform/T͡sT͡s/T͡sɿ/
+#    - xform/T͡sHT͡s/T͡sHɿ/
+#    - xform/sT͡s/sɿ/
+#    - xform/T͡sIːIː/T͡sɿ/
+#    - xform/T͡sHIːIː/T͡sHɿ/
+#    - xform/sIːIː/sɿ/
 #    - xform/nj/ȵ/
 #    - "xlit|PmfTnNlKhHsʃjwWɐAEɛIɪɔOœɵUʊYː]|pmftnŋlkhʰsʃjwʷɐaeɛiɪɔoœɵuʊyː̚|"
 
