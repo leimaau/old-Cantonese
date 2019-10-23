@@ -95,6 +95,7 @@ speller:
     - xform/8/xx/                 # 陽入
     - derive/^nj/j/               # 模糊 nj -> j
     - derive/^([zcs])h/$1/        # 模糊 (zcs)h -> (zcs)
+    - derive/^([zcs])eo([int])$/$1u$2/      # 模糊 (zcs)eo(int) -> (zcs)u(int)
     - derive/aa/r/                # 容錯 aa -> r
     - derive/aa$/a/               # 容錯 aa -> a
     - derive/oe(ng|k)$/eo$1/      # 容錯 oe(ng|k) -> eo(ng|k)
@@ -148,18 +149,18 @@ translator:
 #    - xform/c/T͡sH/	差tsʰaː
 #    - xform/d/T/	打taː
 #    - xform/eu/ɛːU/	掉tɛːu
-#    - xform/eoi/ɵY/	水sɵy
-#    - xform/oei/ɵY/	容錯
+#    - xform/eoi/ʊi/	# 水ʃʊi/ʃɵy(ɵY)
+#    - xform/oei/ʊi/	容錯  # ʊi/ɵy
 #    - xform/oe([ptk])/œː$1]/	約jœːk̚
 #    - xform/oe(ng)/œː$1/	容錯
-#    - xform/oe([t])/ɵ$1]/	容錯
-#    - xform/oe([n])/ɵ$1/	容錯
+#    - xform/oe([t])/ʊ$1]/	容錯  # ʊt̚/ɵt̚
+#    - xform/oe([n])/ʊ$1/	容錯  # ʊn/ɵn
 #    - xform/oe/œː/	張tsœːŋ
 #    - xform/oi/ɔːI/	蓋kʰɔːi
 #    - xform/eo(ng)/œːŋ/	容錯
 #    - xform/eo([k])/œː$1]/	容錯
-#    - xform/eo([t])/ɵ$1]/	率sɵt̚
-#    - xform/eon/ɵn/	信sɵn
+#    - xform/eo([t])/ʊ$1]/	# 率ʃʊt̚/ʃɵt̚
+#    - xform/eon/ʊn/	# 信sʊn/sɵn
 #    - xform/ou/OU/	無mou
 #    - xform/u([k])/ʊ$1]/	六lʊk̚
 #    - xform/ui/UːI/	回wuːi
@@ -167,7 +168,7 @@ translator:
 #    - xform/i(ng)/ɪN/	名mɪŋ
 #    - xform/ik/ɪK]/	式sɪk̚
 #    - xform/i([pt])/Iː$1]/	結kiːt̚
-#    - xform/eo/ɵ/	去hɵy
+#    - xform/eo/ʊ/	# 雖sʊi/sɵy
 #    - xform/a/ɐ/	粒nɐp̚
 #    - xform/ei/EI/	欸ei
 #    - xform/i/Iː/	是siː
