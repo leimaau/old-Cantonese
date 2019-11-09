@@ -4,7 +4,7 @@
 schema:
   schema_id: jingwaa_fanwan
   name: "1856年《英華分韵撮要》"
-  version: "2019.10.23"
+  version: "2019.11.06"
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
@@ -98,7 +98,7 @@ speller:
     - derive/^nj/j/               # 模糊 nj -> j
     - derive/^([zcs])z/$1i/       # 模糊 (zcs)z -> (zcs)i
     - derive/^([zcs])h/$1/        # 模糊 (zcs)h -> (zcs)
-    - derive/^([zcs])eo([int])$/$1u$2/      # 模糊 (zcs)eo(int) -> (zcs)u(int)
+    - derive/^([zcsj])eo([int])$/$1u$2/      # 模糊 (zcsj)eo(int) -> (zcsj)u(int)
     - derive/^([gk])w(u|yu|yun|yut|ui|un|ut)/$1$2/        # 模糊 ([gk])w(u|yu|yun|yut|ui|un|ut) -> ([gk])(yu|yun|yut|ui|un|ut)
     - derive/aa/r/                # 容錯 aa -> r
     - derive/aa$/a/               # 容錯 aa -> a
@@ -133,6 +133,7 @@ translator:
 #    - xform/([ptk])x/$1˧/	咽jiːt̚˧
 #    - xform/([ptk])q/$1˥/	一jɐt̚
 #    - xform/qq/˨˩/
+#    - xform/(^|[ '])q/$1ʔ/
 #    - xform/q/˥˥/
 #    - xform/vv/˩˧/
 #    - xform/v/˧˥/
