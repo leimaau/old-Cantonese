@@ -1,4 +1,4 @@
-# 《分韻撮要》輸入方案
+# Rime Old Cantonese Input Scheme | 《分韻撮要》音系及輸入方案
 
 配方： ℞ **leimaau/old-Cantonese**
 
