@@ -1,3 +1,5 @@
+<div lang="yue-HK">
+
 # Rime Old Cantonese Input Scheme | 《分韻撮要》音系及輸入方案
 
 配方： ℞ **leimaau/old-Cantonese**
@@ -80,3 +82,5 @@
 ## 參考文獻
 
 羅言發. 澳門粵語音系的歷史變遷及其成因. 北京大學博士論文. 2013年.
+
+</div>
