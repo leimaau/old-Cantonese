@@ -9,7 +9,7 @@
 
 ---
 name: jingwaa_fanwan
-version: "2020.02.27"
+version: "2020.02.28"
 sort: by_weight	# original
 use_preset_vocabulary: true
 ...
@@ -913,11 +913,11 @@ use_preset_vocabulary: true
 寵	chung2
 𠖥	chung2
 銃	chung3
-黜	zheot7°
-絀	zheot7°
-怵	zheot7°
-㧤	zheot7°
-出	cheot7°
+黜	zheot7
+絀	zheot7
+怵	zheot7
+㧤	zheot7
+出	cheot7
 拙	zhyut7°
 梲	zhyut7°
 啜	zhyut7°
@@ -6035,12 +6035,12 @@ use_preset_vocabulary: true
 慫	sung2
 送	sung3
 宋	sung3
-卹	seot7°
-恤	seot7°
-戌	seot7°
-率	seot7°
-帥	seot7°
-𣘚	seot7°
+卹	seot7
+恤	seot7
+戌	seot7
+率	seot7
+帥	seot7
+𣘚	seot7
 雪	syut7°
 師	sz1
 螄	sz1
@@ -7431,8 +7431,8 @@ use_preset_vocabulary: true
 淞	cung4
 叢	cung4
 潨	cung4
-卒	zeot7°
-蟀	zeot7°
+卒	zeot7
+蟀	zeot7
 啐	zyut7°
 絕	zyut8
 撮	cyut7°
