@@ -4,12 +4,13 @@
 # gongwu_fanwan - 1838年《江湖尺牘分韻撮要合集》
 #
 # Author - LeiMaau <leimaau@qq.com>
-#
+# 
+# 益韻的「蹠跖拓隻炙/尺/石碩鼫」此處擬音分出 ek 韻
 #
 
 ---
 name: gongwu_fanwan
-version: "2019.10.23"
+version: "2020.02.29"
 sort: by_weight	# original
 use_preset_vocabulary: true
 ...
@@ -2832,15 +2833,15 @@ use_preset_vocabulary: true
 劇	kik8
 屐	kik8
 溺	nik8
-跖	zhik7°
-蹠	zhik7°
-拓	zhik7°
-隻	zhik7°
-炙	zhik7°
-尺	chik7°
-石	shik8
-碩	shik8
-鼫	shik8
+跖	zhek7°
+蹠	zhek7°
+拓	zhek7°
+隻	zhek7°
+炙	zhek7°
+尺	chek7°
+石	shek8
+碩	shek8
+鼫	shek8
 賓	ban1
 臏	ban1
 濱	ban1
