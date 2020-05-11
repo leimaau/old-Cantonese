@@ -8,7 +8,7 @@ schema:
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
-    採用拓展的『香港語言學會粵語拼音方案』
+    採用『香港語言學會粵語拼音方案』
     聲調輸入 q平 v上 x去 （雙擊爲陽調）
     IPA版提供多種字形轉換和提示音爲IPA
     提供三種反查方案，[`]用普拼反查，[x]用五筆畫反查，[v]用倉頡五代反查
@@ -19,42 +19,36 @@ schema:
     - cangjie5
 
 switches:
-  __include: gongwu_fanwan.schema:/switches
-  __patch:
-    - options: [zh_simp2, zh_simp, noop, zh_trad, zh_hk, zh_tw, zh_jp]
-      reset: 1
-      states:
-        - 字形 → 大陸〔繁體〕
-        - 字形 → 大陸
-        - 字形 → 傳統〔不轉換〕
-        - 字形 → 傳統
-        - 字形 → 香港
-        - 字形 → 臺灣
-        - 字形 → 日本
-    - name: emoji_cn
-      reset: 0
-      states: [ 〇, 😊 ]
-    - name: ascii_mode
-      reset: 0
-      states: [ 中文, 西文 ]
-    - name: full_shape
-      states: [ 半角, 全角 ]
-    - name: ascii_punct
-      states: [ 。，, ．， ]
-
+  - options: [simplification, noop, zh_hk, zh_tw, zh_jp]
+    reset: 0
+    states:
+      - 字形 → 大陸
+      - 字形 → 傳統〔不轉換〕
+      - 字形 → 香港
+      - 字形 → 臺灣
+      - 字形 → 日本
+  - name: emoji_cn
+    reset: 0
+    states: [ 〇, 😊 ]
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+        
 engine:
   __include: gongwu_fanwan.schema:/engine
   __patch:
-    engine/filters:
-        - simplifier@zh_simp
-        - simplifier@zh_simp2
-        - simplifier@zh_trad
-        - simplifier@zh_hk
-        - simplifier@zh_tw
-        - simplifier@zh_jp
-        - simplifier@emoji_cn
-        - uniquifier
-        - reverse_lookup_filter@reverse_lookup
+    filters:
+      - simplifier
+      - simplifier@zh_hk
+      - simplifier@zh_tw
+      - simplifier@zh_jp
+      - simplifier@emoji_cn
+      - uniquifier
+      - reverse_lookup_filter@reverse_lookup
 
 speller:
   __include: gongwu_fanwan.schema:/speller
@@ -174,35 +168,17 @@ key_binder:
 recognizer:
   __include: gongwu_fanwan.schema:/recognizer
 
-zh_simp:
-  option_name: zh_simp
-  opencc_config: t2s.json
-  tips: none
-
-zh_simp2:
-  option_name: zh_simp2
-  opencc_config: t2s.json
-  tips: all
-
-zh_trad:
-  option_name: zh_trad
-  opencc_config: s2t.json
-  tips: all
-
 zh_hk:
   option_name: zh_hk
   opencc_config: t2hk.json
-  tips: all
 
 zh_tw:
   option_name: zh_tw
   opencc_config: t2tw.json
-  tips: all
 
 zh_jp:
   option_name: zh_jp
   opencc_config: t2jp.json
-  tips: all
 
 emoji_cn:
   opencc_config: emoji.json

@@ -8,7 +8,7 @@ schema:
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
-    採用拓展的『香港語言學會粵語拼音方案』
+    採用『香港語言學會粵語拼音方案』
     聲調輸入 q平 v上 x去 （雙擊爲陽調）
     IPA版提供多種字形轉換和提示音爲IPA
     提供三種反查方案，[`]用普拼反查，[x]用五筆畫反查，[v]用倉頡五代反查
@@ -19,14 +19,14 @@ schema:
     - cangjie5
 
 switches:
+  - name: simplification
+    reset: 1
+    states: [ 漢字, 汉字 ]
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
-  - name: simplification
-    reset: 1
-    states: [ 漢字, 汉字 ]
   - name: ascii_punct
     states: [ 。，, ．， ]
 
