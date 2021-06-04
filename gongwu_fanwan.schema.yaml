@@ -4,7 +4,7 @@
 schema:
   schema_id: gongwu_fanwan
   name: "1838年《江湖尺牘分韻撮要合集》"
-  version: "2020.05.11"
+  version: "2021.06.04"
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
@@ -88,7 +88,7 @@ speller:
     - derive/aa$/a/               # 容錯 aa -> a
     - derive/oe(ng|k)$/eo$1/      # 容錯 oe(ng|k) -> eo(ng|k)
     - derive/eo([int])$/oe$1/     # 容錯 eo(int) -> oe(int)
-    - derive/e(ng|k)$/i$1/        # 模糊 e(ng|k) -> i(ng|k)
+    - derive/i(ng|k)$/e$1/        # 模糊 i(ng|k) -> e(ng|k)
     - abbrev/^([a-z]).+$/$1/      # 首字母簡拼
     - abbrev/^([a-z]{2}).+$/$1/   # 首2字母簡拼
     - abbrev/^(gw|kw|ng).+$/$1/   # 聲母簡拼

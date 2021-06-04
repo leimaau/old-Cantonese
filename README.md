@@ -7,8 +7,8 @@
 [Rime](https://rime.im) 《分韻撮要》輸入方案
 
 - 《分韻撮要》輸入方案 - `leimaau/old-Cantonese`
-	- 1838年《江湖尺牘分韻撮要合集》 - `gongwu_fanwan`
-	- 1838年《江湖尺牘分韻撮要合集》(IPA) - `gongwu_fanwan_ipa`
+	- 1838年重鐫本《江湖尺牘分韻撮要合集》 - `gongwu_fanwan`
+	- 1838年重鐫本《江湖尺牘分韻撮要合集》(IPA) - `gongwu_fanwan_ipa`
 	- 1856年《英華分韵撮要》 - `jingwaa_fanwan`
 	- 1856年《英華分韵撮要》(IPA) - `jingwaa_fanwan_ipa`
 
@@ -63,7 +63,7 @@
 | 第三十二彭棒硬額 | 彭aang[aŋ] | 額aak[ak] |
 | 第三十三吾五悟 | 吾ng[ŋ] |  |
 
-**注：** 孤韻的孤小韻和高小韻本人的構擬爲聲母差異，孤[kwo]>[ku]、高[ko]>[kou]，爲方便拼音方案製作，簡化爲孤gwu[kwu]、高gu[ku]。
+**注：** 孤韻的孤小韻和高小韻論文的構擬爲聲母差異，孤[kwo]>[ku]、高[ko]>[kou]，爲方便拼音方案製作，簡化爲孤gwu[kwu]、高gu[ku]。
 
 ### 聲調
 
