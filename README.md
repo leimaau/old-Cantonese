@@ -7,8 +7,8 @@
 [Rime](https://rime.im) 《分韻撮要》輸入方案
 
 - 《分韻撮要》輸入方案 - `leimaau/old-Cantonese`
-	- 1838年重鐫本《江湖尺牘分韻撮要合集》 - `gongwu_fanwan`
-	- 1838年重鐫本《江湖尺牘分韻撮要合集》(IPA) - `gongwu_fanwan_ipa`
+	- 1838年重鐫本《江湖尺牘分韻撮要合集》[首版爲1782年] - `gongwu_fanwan`
+	- 1838年重鐫本《江湖尺牘分韻撮要合集》[首版爲1782年](IPA) - `gongwu_fanwan_ipa`
 	- 1856年《英華分韵撮要》 - `jingwaa_fanwan`
 	- 1856年《英華分韵撮要》(IPA) - `jingwaa_fanwan_ipa`
 
