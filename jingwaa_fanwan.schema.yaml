@@ -4,7 +4,7 @@
 schema:
   schema_id: jingwaa_fanwan
   name: "1856年《英華分韵撮要》"
-  version: "2021.06.04"
+  version: "2021.06.15"
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
@@ -89,6 +89,7 @@ speller:
     - derive/oe(ng|k)$/eo$1/      # 容錯 oe(ng|k) -> eo(ng|k)
     - derive/eo([int])$/oe$1/     # 容錯 eo(int) -> oe(int)
     - derive/i(ng|k)$/e$1/        # 模糊 i(ng|k) -> e(ng|k)
+    - derive/(d|t)un$/$1eon/      # 模糊 (d|t)un -> (d|t)eon
     - abbrev/^([a-z]).+$/$1/      # 首字母簡拼
     - abbrev/^([a-z]{2}).+$/$1/   # 首2字母簡拼
     - abbrev/^(gw|kw|ng).+$/$1/   # 聲母簡拼
