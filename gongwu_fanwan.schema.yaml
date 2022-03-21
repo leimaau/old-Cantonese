@@ -102,15 +102,15 @@ translator:
   prism: gongwu_fanwan
   spelling_hints: 5  # 標註拼音的字數，建議橫排顯示時設置爲1
   preedit_format:  
-    - xform/([zaeioumngptk])qq/$1⁴/
-    - xform/([zaeioumng])q/$1¹/
-    - xform/([zaeioumngptk])vv/$1⁵/
-    - xform/([zaeioumngptk])v/$1²/
-    - xform/([zaeioumng])xx/$1⁶/
-    - xform/([zaeioumng])x/$1³/
-    - xform/([ptk])q/$1⁷/
-    - xform/([ptk])xx/$1⁸/
-    - xform/([ptk])x/$1⁷°/
+    - xform/([zaeioumngptk])qq/${1}4/
+    - xform/([zaeioumng])q/${1}1/
+    - xform/([zaeioumngptk])vv/${1}5/
+    - xform/([zaeioumngptk])v/${1}2/
+    - xform/([zaeioumng])xx/${1}6/
+    - xform/([zaeioumng])x/${1}3/]
+    - xform/([ptk])q/${1}7/
+    - xform/([ptk])xx/${1}8/
+    - xform/([ptk])x/${1}7°/
 
 luna_pinyin:    # 普拼反查
   tag: luna_pinyin
