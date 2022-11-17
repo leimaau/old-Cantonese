@@ -4,7 +4,7 @@
 schema:
   schema_id: gongwu_fanwan_ipa
   name: "1838年《江湖尺牘分韻撮要合集》(IPA)"
-  version: "2020.05.11"
+  version: "2022.11.17"
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
@@ -27,9 +27,6 @@ switches:
       - 字形 → 香港
       - 字形 → 臺灣
       - 字形 → 日本
-  - name: emoji_cn
-    reset: 0
-    states: [ 〇, 😊 ]
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
@@ -37,6 +34,9 @@ switches:
     states: [ 半角, 全角 ]
   - name: ascii_punct
     states: [ 。，, ．， ]
+  - name: emoji_cn
+    reset: 0
+    states: [ 〇, 😊 ]
         
 engine:
   __include: gongwu_fanwan.schema:/engine
