@@ -12,7 +12,7 @@
 
 ---
 name: gongwu_fanwan
-version: "2022.11.17"
+version: "2024.04.08"
 sort: by_weight	# original
 use_preset_vocabulary: true
 ...

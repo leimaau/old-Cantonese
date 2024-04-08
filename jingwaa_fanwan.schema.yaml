@@ -4,15 +4,13 @@
 schema:
   schema_id: jingwaa_fanwan
   name: "1856年《英華分韵撮要》"
-  version: "2022.11.17"
+  version: "2024.04.08"
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
-    採用『香港語言學會粵語拼音方案』
+    採用香港語言學學會粵語拼音方案
     聲調輸入 q平 v上 x去 （雙擊爲陽調）
-    IPA版提供多種字形轉換和提示音爲IPA
     提供三種反查方案，[`]用普拼反查，[x]用五筆畫反查，[v]用倉頡五代反查
-    項目主頁 https://github.com/leimaau/old-Cantonese
   dependencies:
     - luna_pinyin
     - stroke
@@ -76,7 +74,7 @@ speller:
     - xform/6/xx/
     - xform/8/xx/                 # 陽入
     - derive/^(z|c|s)z$/$1y/      # 兼容 (zcs)z -> (zcs)y 吳語式方案
-    - derive/^(z|c|s)z$/$1ii/     # 兼容 (zcs)z -> (zcs)ii 客家話方案
+    - derive/^(z|c|s)z$/$1ii/     # 兼容 (zcs)z -> (zcs)ii 雙寫字母方案
     - derive/^nj/j/               # 模糊 nj -> j
     - derive/^([zcs])z/$1i/       # 模糊 (zcs)z -> (zcs)i
     - derive/^([zcs])h/$1/        # 模糊 (zcs)h -> (zcs)
@@ -91,7 +89,7 @@ speller:
     - derive/i(ng|k)$/e$1/        # 模糊 i(ng|k) -> e(ng|k)
     - derive/(d|t)un$/$1eon/      # 模糊 (d|t)un -> (d|t)eon
     - abbrev/^([a-z]).+$/$1/      # 首字母簡拼
-    - abbrev/^([a-z]{2}).+$/$1/   # 首2字母簡拼
+#    - abbrev/^([a-z]{2}).+$/$1/   # 首2字母簡拼
     - abbrev/^(gw|kw|ng).+$/$1/   # 聲母簡拼
 
 menu:
@@ -101,7 +99,7 @@ menu:
 translator:
   dictionary: jingwaa_fanwan
   prism: jingwaa_fanwan
-  spelling_hints: 5  # 標註拼音的字數，建議橫排顯示時設置爲1
+  spelling_hints: 8  # 標註拼音的字數，建議橫排顯示時設置爲1
   preedit_format: 
     - xform/([zaeioumngptk])qq/${1}4/
     - xform/([zaeioumng])q/${1}1/

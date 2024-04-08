@@ -1,186 +1,70 @@
 # Rime schema
 # encoding: utf-8
 
+__include: gongwu_fanwan.schema:/
+
 schema:
   schema_id: gongwu_fanwan_ipa
   name: "1838年《江湖尺牘分韻撮要合集》(IPA)"
-  version: "2022.11.17"
+  version: "2024.04.08"
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
-    採用『香港語言學會粵語拼音方案』
+    採用香港語言學學會粵語拼音方案
     聲調輸入 q平 v上 x去 （雙擊爲陽調）
-    IPA版提供多種字形轉換和提示音爲IPA
     提供三種反查方案，[`]用普拼反查，[x]用五筆畫反查，[v]用倉頡五代反查
-    項目主頁 https://github.com/leimaau/old-Cantonese
-  dependencies:
-    - luna_pinyin
-    - stroke
-    - cangjie5
-
-switches:
-  - options: [simplification, noop, zh_hk, zh_tw, zh_jp]
-    reset: 0
-    states:
-      - 字形 → 大陸
-      - 字形 → 傳統〔不轉換〕
-      - 字形 → 香港
-      - 字形 → 臺灣
-      - 字形 → 日本
-  - name: ascii_mode
-    reset: 0
-    states: [ 中文, 西文 ]
-  - name: full_shape
-    states: [ 半角, 全角 ]
-  - name: ascii_punct
-    states: [ 。，, ．， ]
-  - name: emoji_cn
-    reset: 0
-    states: [ 〇, 😊 ]
-        
-engine:
-  __include: gongwu_fanwan.schema:/engine
-  __patch:
-    filters:
-      - simplifier
-      - simplifier@zh_hk
-      - simplifier@zh_tw
-      - simplifier@zh_jp
-      - simplifier@emoji_cn
-      - uniquifier
-      - reverse_lookup_filter@reverse_lookup
-
-speller:
-  __include: gongwu_fanwan.schema:/speller
-
-menu:
-  __include: gongwu_fanwan.schema:/menu
 
 translator:
   dictionary: gongwu_fanwan
   prism: gongwu_fanwan_ipa
-  spelling_hints: 5  # 標註拼音的字數，建議橫排顯示時設置爲1
+  spelling_hints: 8  # 標註拼音的字數，建議橫排顯示時設置爲1
   preedit_format: 
-    - xform/(^|[ '])(m)+$/$1$2̩/               # 唔m̩
-    - xform/(^|[ '])(ng)+$/$1$2̍/             # 五ŋ̍
-    - xform/([ptk])xx/$1˨/	熱jiːt̚˨
-    - xform/([ptk])x/$1˧/	咽jiːt̚˧
-    - xform/([ptk])q/$1˥/	一jɐt̚
-    - xform/qq/˨˩/
-    - xform/(^|[ '])q/$1ʔ/
-    - xform/q/˥/
-    - xform/vv/˩˧/
-    - xform/v/˧˥/
-    - xform/xx/˨/
-    - xform/x/˧/
-    - xform/([PTK])$/$1]$2/	入jɐp̚
-    - xform/(^|[ '])([jy])u(ng)/$1jʊŋ/	用jʊŋ
-    - xform/(^|[ '])(jy|[jy])u([t])/$1jYː$3]/	月ȵyːt̚
-    - xform/([dtlgkhzcsj])yu([t])/$1Yː$2]/	奪tyːt̚
-    - xform/(^|[ '])([jy])u([k])/$1jʊ$3]/	玉ȵʊk̚
-    - xform/(^|[ '])(jy)u/$1jYː/	元ȵyːn
-    - xform/yu/Yː/	嫩nyːn
-    - xform/y([aeior])/j$1/	一yat/jɐt̚/
-    - xform/(aa|r)([iu])/Aː\U$2/	嗎maː
-    - xform/a([iu])/ɐ\U$1/	米mɐi
-    - xform/(aa|r)([ptk])/Aː\U$2]/	鈪aːk̚
-    - xform/a([ptk])/ɐ\U$1]/	厄ɐk̚
-    - xform/(aa|r)/Aː/	嗎maː
-    - xform/b/P/	吧paː
-    - xform/ch/T͡ʃH/	差tʃʰaː
-    - xform/c/T͡sH/	倉tsʰɔːŋ
-    - xform/d/T/	打taː
-    - xform/eu/ɛːU/
-    - xform/eoi/ʊI/	# 水ʃʊi/ʃɵy(ɵY)
-    - xform/oei/ʊI/	容錯  # ʊi/ɵy
-    - xform/oe([ptk])/œː$1]/	約jœːk̚
-    - xform/oe(ng)/œː$1/	容錯
-    - xform/oe([t])/ʊ$1]/	容錯  # ʊt̚/ɵt̚
-    - xform/oe([n])/ʊ$1/	容錯  # ʊn/ɵn
-    - xform/oe/œː/	張tsœːŋ
-    - xform/oi/ɔːI/	蓋kʰɔːi
-    - xform/eo(ng)/œːŋ/	容錯
-    - xform/eo([k])/œː$1]/	容錯
-    - xform/eo([t])/ʊ$1]/	# 率ʃʊt̚/ʃɵt̚
-    - xform/eon/ʊn/	# 信sʊn/sɵn
-    - xform/ou/OU/
-    - xform/u([k])/ʊ$1]/	六lʊk̚
-    - xform/ui/UːI/	回wuːi
-    - xform/iu/IːU/	小siːu
-    - xform/i(ng)/ɪN/	名mɪŋ
-    - xform/ik/ɪK]/	式sɪk̚
-    - xform/i([pt])/Iː$1]/	結kiːt̚
-    - xform/eo/ʊ/	# 雖sʊi/sɵy
-    - xform/a/ɐ/	粒nɐp̚
-    - xform/ei/EI/
-    - xform/i/Iː/	是siː
-    - xform/e([ptk])/ɛː$1]/	壢lɛːk̚
-    - xform/e/ɛː/	寫sɛː
-    - xform/o([ptk])/ɔː$1]/	莫mɔːk̚
-    - xform/u([pt])/Uː$1]/	活wuːt̚
-    - xform/u(ng)/ʊN/	動tʊŋ
-    - xform/o/ɔː/	錯tsʰɔː
-    - xform/u/Uː/	故kuː
-    - xform/ng/N/	我ŋɔː
-    - xform/n/n/	你ni
-    - xform/kw/KWH/	群kʷʰɐn
-    - xform/gw/KW/	均kʷɐn
-    - xform/g/K/	急kɐp̚
-    - xform/(^|[ '])([ptk])/$1$2H/	噴pʰɐn
-    - xform/w/w/	雲wɐn
-    - xform/j/j/	人jɐn
-    - xform/m/m/	美mi
-    - xform/l/l/	里li
-    - xform/sh/ʃ/	是ʃi
-    - xform/s/s/	死sɿ
-    - xform/zh/T͡ʃ/	這t͡ʃɛː
-    - xform/z/T͡s/	借t͡sɛː
-    - xform/T͡sy/T͡sɿ/
-    - xform/T͡sHy/T͡sHɿ/
-    - xform/sy/sɿ/
-    - xform/T͡sT͡s/T͡sɿ/
-    - xform/T͡sHT͡s/T͡sHɿ/
-    - xform/sT͡s/sɿ/
-    - xform/T͡sIːIː/T͡sɿ/
-    - xform/T͡sHIːIː/T͡sHɿ/
-    - xform/sIːIː/sɿ/
+    - xform/ng/ŋ/
+    - xform/^| |'/,/
+
+    - xform/(,|h)(m|ŋ)(qq?|xx?|vv?)?(?=$|,)/$1$2̍$3/
+    - xform/m̍/m̩/
+
+    - xform/,y(ŋ|k)/,jʊ$1/
+    - xform/,y(n|t)/,jy$1/
+    - xform/,y/,j/
+  
+    - xform/([,qgkŋhdz]oe)t/$1d/
+    - xform/([zcs])y(?!u)/$1ɿ$2/
+    - xform/eo|oe/œ/
+    - xform/yu/y/
+    - xform/aa/r/
+    - xlit/aroe/ɐaɔɛ/
+
+    - xform/ɔu/ou/
+    - xform/œ(n|t)/ʊ$1/
+    - xform/œ[iy]/ʊȋ/
+    - xform/ɛi/ei/
+    - xform/i(ŋ|k)/ɪ$1/
+    - xform/u(ŋ|k)/ʊ$1/
+
+    - xform/a|ɔ|œ|ɛ|i|u|y(?!̑)/$&ː/
+    - xform/([ːɐoɵeʊ][iu])ː/$1/
+    - xform/[ːɐoɵeʊ][ptdk]/$&̚/
+
+    - xform/,([ptc]|kw?)/$&ʰ/
+    - xform/,q/,ʔ/
+    - xform/[kg]w/kʷ/
+    - xform/([cz])(?=ɿ)/t͡s/
+    - xform/ch|zh/t͡ʃ/
+    - xform/c|z/t͡s/
+    - xform/sh(?!ɿ)/ʃ/
     - xform/nj/ȵ/
-    - "xlit|PmfTnNlKhHsʃjwWɐAEɛIɪɔOœɵUʊYː]|pmftnŋlkhʰsʃjwʷɐaeɛiɪɔoœɵuʊyː̚|"
+    - xlit/bdg/ptk/
 
-luna_pinyin:
-  __include: gongwu_fanwan.schema:/luna_pinyin
+    - xform/qq/˨˩/
+    - xform/xx/˨/
+    - xform/vv/˩˧/
+    - xform/q/˥/
+    - xform/x/˧/
+    - xform/v/˧˥/
 
-stroke:
-  __include: gongwu_fanwan.schema:/stroke
+    - xform/^,//
+    - xform/̑//
+    - xform/,/ /
 
-cangjie5:
-  __include: gongwu_fanwan.schema:/cangjie5
-
-reverse_lookup:
-  __include: gongwu_fanwan.schema:/reverse_lookup
-
-punctuator:
-  __include: gongwu_fanwan.schema:/punctuator
-
-key_binder:
-  __include: gongwu_fanwan.schema:/key_binder
-
-recognizer:
-  __include: gongwu_fanwan.schema:/recognizer
-
-zh_hk:
-  option_name: zh_hk
-  opencc_config: t2hk.json
-
-zh_tw:
-  option_name: zh_tw
-  opencc_config: t2tw.json
-
-zh_jp:
-  option_name: zh_jp
-  opencc_config: t2jp.json
-
-emoji_cn:
-  opencc_config: emoji.json
-  option_name: emoji_cn
-  tips: all
