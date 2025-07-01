@@ -6,7 +6,7 @@ __include: gongwu_fanwan.schema:/
 schema:
   schema_id: gongwu_fanwan_ipa
   name: "1838年《江湖尺牘分韻撮要合集》(IPA)"
-  version: "2024.04.08"
+  version: "2025.07.01"
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
@@ -30,7 +30,7 @@ translator:
     - xform/,y/,j/
   
     - xform/([,qgkŋhdz]oe)t/$1d/
-    - xform/([zcs])y(?!u)/$1ɿ$2/
+    - xform/([zcs])(y|ii|z)(?!u)/$1ɿ$3/
     - xform/eo|oe/œ/
     - xform/yu/y/
     - xform/aa/r/

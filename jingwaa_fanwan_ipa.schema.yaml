@@ -6,7 +6,7 @@ __include: jingwaa_fanwan.schema:/
 schema:
   schema_id: jingwaa_fanwan_ipa
   name: "1856年《英華分韵撮要》(IPA)"
-  version: "2024.04.08"
+  version: "2025.07.01"
   author:
     - LeiMaau <leimaau@qq.com>
   description: |
@@ -30,7 +30,7 @@ translator:
     - xform/,y/,j/
   
     - xform/([,qgkŋhdz]oe)t/$1d/
-    - xform/([zcs])y(?!u)/$1ɿ$2/
+    - xform/([zcs])(y|ii|z)(?!u)/$1ɿ$3/
     - xform/eo|oe/œ/
     - xform/yu/y/
     - xform/aa/r/
